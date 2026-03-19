@@ -1,29 +1,88 @@
-body{
-font-family: Arial;
-background:#111;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
+body {
+  margin: 0;
+  font-family: sans-serif;
+  transition: 0.3s;
 }
 
-.calculator{
-background:#222;
-padding:20px;
-border-radius:10px;
+.app {
+  width: 350px;
+  margin: 40px auto;
+  border-radius: 20px;
+  padding: 15px;
 }
 
-#display{
-width:100%;
-height:40px;
-font-size:20px;
-margin-bottom:10px;
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
 
-button{
-width:60px;
-height:40px;
-margin:5px;
-font-size:16px;
-cursor:pointer;
+.display {
+  background: rgba(0,0,0,0.2);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#screen {
+  width: 100%;
+  font-size: 24px;
+  border: none;
+  background: transparent;
+  color: inherit;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+button {
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.history {
+  margin-left: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+  font-size: 14px;
+}
+
+/* THEMES */
+
+body.dark {
+  background: #121212;
+  color: white;
+}
+
+body.dark .app {
+  background: #1e1e1e;
+}
+
+body.light {
+  background: #f5f5f5;
+  color: black;
+}
+
+body.light .app {
+  background: white;
+}
+
+body.neon {
+  background: black;
+  color: #00ffcc;
+}
+
+body.neon .app {
+  box-shadow: 0 0 20px #00ffcc;
 }
