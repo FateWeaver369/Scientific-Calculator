@@ -1,52 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Scientific Calculator</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Scientific Calculator</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+<body class="dark">
 
-<body>
+<div class="app">
 
-<div class="calculator">
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <select id="theme">
+      <option value="dark">Dark</option>
+      <option value="light">Light</option>
+      <option value="neon">Neon</option>
+    </select>
 
-<input type="text" id="display" readonly>
+    <button onclick="toggleAngle()">DEG</button>
+  </div>
 
-<div class="buttons">
+  <!-- DISPLAY -->
+  <div class="display">
+    <div id="history-preview"></div>
+    <input id="screen" readonly />
+  </div>
 
-<button onclick="press('7')">7</button>
-<button onclick="press('8')">8</button>
-<button onclick="press('9')">9</button>
-<button onclick="press('/')">/</button>
+  <!-- MAIN -->
+  <div class="main">
 
-<button onclick="press('4')">4</button>
-<button onclick="press('5')">5</button>
-<button onclick="press('6')">6</button>
-<button onclick="press('*')">*</button>
+    <!-- BUTTONS -->
+    <div class="buttons">
 
-<button onclick="press('1')">1</button>
-<button onclick="press('2')">2</button>
-<button onclick="press('3')">3</button>
-<button onclick="press('-')">-</button>
+      <button onclick="clearAll()">AC</button>
+      <button onclick="del()">DEL</button>
+      <button onclick="append('(')">(</button>
+      <button onclick="append(')')">)</button>
 
-<button onclick="press('0')">0</button>
-<button onclick="press('.')">.</button>
-<button onclick="calculate()">=</button>
-<button onclick="press('+')">+</button>
+      <button onclick="func('sin')">sin</button>
+      <button onclick="func('cos')">cos</button>
+      <button onclick="func('tan')">tan</button>
+      <button onclick="append('/')">÷</button>
 
-<button onclick="scientific('sin')">sin</button>
-<button onclick="scientific('cos')">cos</button>
-<button onclick="scientific('tan')">tan</button>
-<button onclick="clearDisplay()">C</button>
+      <button onclick="append('7')">7</button>
+      <button onclick="append('8')">8</button>
+      <button onclick="append('9')">9</button>
+      <button onclick="append('*')">×</button>
 
-</div>
+      <button onclick="append('4')">4</button>
+      <button onclick="append('5')">5</button>
+      <button onclick="append('6')">6</button>
+      <button onclick="append('-')">−</button>
+
+      <button onclick="append('1')">1</button>
+      <button onclick="append('2')">2</button>
+      <button onclick="append('3')">3</button>
+      <button onclick="append('+')">+</button>
+
+      <button onclick="append('0')">0</button>
+      <button onclick="append('.')">.</button>
+      <button onclick="append('Math.PI')">π</button>
+      <button onclick="calculate()">=</button>
+
+      <button onclick="append('Math.sqrt(')">√</button>
+      <button onclick="append('**2')">x²</button>
+      <button onclick="append('Math.log10(')">log</button>
+      <button onclick="append('Math.log(')">ln</button>
+
+    </div>
+
+    <!-- HISTORY -->
+    <div class="history" id="history"></div>
+
+  </div>
 
 </div>
 
 <script src="script.js"></script>
-
 </body>
 </html>
-
+           
 
 
 
